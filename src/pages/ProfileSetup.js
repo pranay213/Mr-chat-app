@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "../css/Home.css";
 import Button from "../components/Button";
 import AppInput from "../components/AppInput";
@@ -10,7 +10,9 @@ import { Buffer } from "buffer";
 import btoa from "btoa";
 import { ClimbingBoxLoader, ClipLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
+import { MainContext } from "../Context";
 const ProfileSetup = () => {
+  const { setUserName } = useContext(MainContext);
   const [user, setUser] = useState({ name: "", image: "" });
   const [loading, setLoading] = useState(false);
   const [fetch, setFetch] = useState(0);
@@ -35,6 +37,7 @@ const ProfileSetup = () => {
       console.log("Response", Response);
       if (Response.status === 200) {
         setLoading(false);
+        setUserName((prev) => user.name);
         return navigate("/");
       }
     }

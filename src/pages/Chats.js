@@ -2,11 +2,13 @@ import EachUserProfileStory from "../components/svgs/EachUserProfileStory";
 import { v4 as uuidv4 } from "uuid";
 import "../css/Chats.css";
 import NavigationBar from "../components/NavigationBar";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Circle from "../components/svgs/Cirlce";
 import { BarLoader, SkewLoader } from "react-spinners";
+import { MainContext } from "../Context";
 
 const Chats = () => {
+  const { userName } = useContext(MainContext);
   const users = [
     {
       id: uuidv4(),
@@ -45,7 +47,7 @@ const Chats = () => {
   return (
     <div className="chat-bg-container">
       <p className="Welcome-user">
-        Welcome back, <span className="user-name">vinay</span>
+        Welcome back, <span className="user-name">{userName}</span>
       </p>
       <ul className="logos-container">
         <Circle />

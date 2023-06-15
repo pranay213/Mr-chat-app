@@ -6,6 +6,7 @@ const MainContext = createContext("");
 
 const MainContextProvider = ({ children }) => {
   const [loginToken, setLoginToken] = useState(null);
+  const [userName, setUserName] = useState(null);
   useEffect(() => {
     (async () => {
       let token = await getToken();
@@ -16,7 +17,9 @@ const MainContextProvider = ({ children }) => {
     if (loginToken) storeToken(loginToken);
   }, [loginToken]);
   return (
-    <MainContext.Provider value={{ loginToken, setLoginToken }}>
+    <MainContext.Provider
+      value={{ loginToken, setLoginToken, userName, setUserName }}
+    >
       {children}
       <ToasterContainer />
     </MainContext.Provider>
