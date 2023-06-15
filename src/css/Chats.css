@@ -1,0 +1,74 @@
+.chat-bg-container{
+    width: 25%;
+    margin: auto;
+    padding: 20px;
+    background-color: #1E1E1E;
+    height: 94vh;
+    background-image: url('../assets/images/desktop-wallpaper-hopped-the-original-background-if-you-want-to-use-whatsapp-dark-mode-go-to-settings-chats-background-and-use-this-r-whatsapp\ 2.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .Welcome-user{
+    color: #ffffff;
+    font-size: 20px;
+    align-self: flex-start;
+  }
+  .user-name{
+    font-weight: 800;
+  }
+  .logos-container{
+    padding-left: 0;
+    margin-top: 0;
+    display: flex;
+    margin-top: 20px;
+    list-style: none;
+  }
+  .add-story-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    border: 2px solid white;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 3px solid #353535;
+  }
+  .add-story-button-container{
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 59px;
+    height: 59px;
+    background-color: #ffdc5d;
+    border: 5px solid transparent;
+  }
+  .loader-spinner{
+    z-index: 1;
+    top:10;
+    position: absolute;
+    width: 25%;
+    height:80vh ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .data-loader{
+    z-index: 1;
+    top:10;
+    position: absolute;
+    width: 25%;
+    height:80vh ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+  }

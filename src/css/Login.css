@@ -1,0 +1,98 @@
+.login-bg-container{
+    width: 25%;
+    margin: auto;
+    padding: 20px;
+    background-color: #1E1E1E;
+    height: 94vh;
+    background-image: url('../assets/images/desktop-wallpaper-hopped-the-original-background-if-you-want-to-use-whatsapp-dark-mode-go-to-settings-chats-background-and-use-this-r-whatsapp\ 2.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.heading{
+    color: #ffffff;
+    font-family: "Inter";
+    font-size: 40px;
+    text-align: center;
+}
+  
+.background-chat-image{
+    margin-top: 20px;
+}
+.login-container{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-top: 20px;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.country-code-container{
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.india-flag{
+    margin: 0;
+    border-radius: 5px;
+}
+.login-container > input{
+    height: 38px;
+    width: 200px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 32px;
+    background-color: transparent;
+    color: #fff;
+}
+
+
+.checkbox-container{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 30px;
+  }
+ .checkbox-element{
+    height: 40px;
+ } 
+ .checkbox-container > p{
+    color: #ffffff;
+    font-family: "Inter";
+    margin-top: 30px;
+    font-size: larger;
+    margin-bottom: 30px;
+    margin-left: 10px;
+  }
+
+
+  /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.resendBtn
+{
+    border-radius: 50px;
+    width: 80px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+}
+.resendBtn:hover{
+    background-color: transparent;
+    color: white;
+}

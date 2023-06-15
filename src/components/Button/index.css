@@ -1,0 +1,17 @@
+.get-started-button{
+    height: 40px;
+    margin:20px 0;
+    width: 75% ; 
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-family: "Inter";
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .get-started-button:hover{
+    background-color: rgba(0,0,0,0.5);
+    color: #ffff;
+  }

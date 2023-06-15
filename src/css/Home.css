@@ -1,0 +1,100 @@
+.bg-container{
+    width: 25%;
+    margin: auto;
+    padding: 20px;
+    background-color: #1E1E1E;
+    height: 94vh;
+    background-image: url('../assets/images/desktop-wallpaper-hopped-the-original-background-if-you-want-to-use-whatsapp-dark-mode-go-to-settings-chats-background-and-use-this-r-whatsapp\ 2.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .heading{
+    color: #ffffff;
+    font-family: "Inter";
+    font-size: 40px;
+  }
+  
+  .background-chat-image{
+    margin-top: 20px;
+  }
+
+
+  .secure-show-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .heading-2{
+    color: #ffffff;
+    font-family: "Inter";
+    margin-top: 30px;
+    text-align: left;
+    font-size: 26px;
+    font-weight: 800;
+  }
+
+  .secure-show-container > p{
+    color: #ffffff;
+    font-family: "Inter";
+    margin-top: 30px;
+    font-size: larger;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  .button-link{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+  .bg-userImage
+  {
+    position: relative;
+    margin-top:100px;
+  }
+  .bg-UserImage{
+    position: relative;
+    width: 125px;
+    height: 125px;
+    margin:50px;
+    border:5px solid #ffffff;
+    border-radius: 50%;
+    align-self: center;
+    overflow: hidden;
+    padding: 20px;
+  }
+  
+  .bg-Camera-div
+  {
+    position: relative;
+    top:-36%;
+    left: 55%;
+  }
+  
+  .bg-camera
+  {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #16a485;
+    border-radius: 50%;
+    border: none;
+  }
+  .bg-camera:hover{
+    background-color: #14d5b5;
+  }
+  .loader-img
+  {
+    position: absolute;
+    top:36%;
+    align-items: center;
+    left: 42.5%;
+    z-index: 5;
+  }

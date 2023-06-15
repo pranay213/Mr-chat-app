@@ -1,0 +1,15 @@
+
+.svg-icon-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    margin-left: 10px;
+  }
+.user-name-svg{
+    margin-top: -18px !important;
+    font-weight: 400 !important;
+    color: #ffffff;
+    font-family: "Inter";
+    font-size: 13px;
+ }

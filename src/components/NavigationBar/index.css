@@ -1,0 +1,12 @@
+.navigation-bar-container{
+    position: fixed;
+    bottom: 10;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    height: 70vh;
+}
+
+.navigation-link-button-container{
+    list-style: none;
+}
