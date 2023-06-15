@@ -12,3 +12,13 @@ export const clearToken = async () => {
   let clearAll = await localStorage.clear();
   return clearAll;
 };
+
+export const storeName = async (username) => {
+  let name = await localStorage.setItem("name", username);
+  return name;
+};
+
+export const getName = async () => {
+  let name = await localStorage.getItem("name");
+  return name;
+};
