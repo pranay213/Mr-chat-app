@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import ToasterContainer from "../components/Toast";
-import { getName, getToken, storeToken } from "../Storage";
+import { getName, getToken, storeName, storeToken } from "../Storage";
 
 const MainContext = createContext("");
 

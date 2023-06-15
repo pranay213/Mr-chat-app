@@ -71,6 +71,9 @@ const ProfileSetup = () => {
       if (res.status === 200) {
         const { name, image } = res.data;
         setUser((prev) => ({ ...prev, name: name, image: image }));
+        if (name) {
+          setUserName((prev) => name);
+        }
       }
       let imgResp = await getImage();
       // let b64Response = btoa(imgResp);
