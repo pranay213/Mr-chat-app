@@ -14,9 +14,9 @@
     .bg-container{
       width: 100%;
       margin: auto;
-      padding: 20px;
+      padding: 0px;
       background-color: #1E1E1E;
-      height: 94vh;
+      height: 100vh;
       background-image: url('../assets/images/desktop-wallpaper-hopped-the-original-background-if-you-want-to-use-whatsapp-dark-mode-go-to-settings-chats-background-and-use-this-r-whatsapp\ 2.png');
       background-size: cover;
       display: flex;
@@ -48,15 +48,19 @@
     text-align: left;
     font-size: 26px;
     font-weight: 800;
+    margin-left: 20px;
   }
-
+  .secure-show-container{
+   width: 90%;
+   margin-left: 1%;
+  }
   .secure-show-container > p{
     color: #ffffff;
     font-family: "Inter";
     margin-top: 30px;
     font-size: larger;
     margin-bottom: 30px;
-    margin-left: 10px;
+    margin-left: 20px !important;
     font-size: 16px;
   }
   .button-link{
@@ -88,6 +92,7 @@
     position: relative;
     top:-36%;
     left: 55%;
+    width: 10%;
   }
   
   .bg-camera
