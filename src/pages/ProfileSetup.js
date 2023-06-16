@@ -50,7 +50,7 @@ const ProfileSetup = () => {
     var formData = new FormData();
     if ((file?.type).includes("image")) {
       formData.append("image", file);
-      setLoading(true);
+      setImageLoading(true);
       let res = await uploadImage(formData);
       if (res.status === 200) {
         setFetch((prev) => prev + 1);
@@ -59,49 +59,21 @@ const ProfileSetup = () => {
     } else {
       ErrorToast("Please Upload Image Only");
     }
-    setLoading(false);
+    setImageLoading(false);
   };
 
   const ImageFetch = async () => {
-    setLoading(true);
-    setImageLoading((prev) => true);
-    if (fetch === 0) {
-      let res = await fetchImage();
-      console.log({ res });
-      if (res.status === 200) {
-        const { name, image } = res.data;
-        setUser((prev) => ({ ...prev, name: name, image: image }));
-        if (name) {
-          setUserName((prev) => name);
-        }
+    setImageLoading(true);
+    let res = await fetchImage();
+    console.log({ res });
+    if (res.status === 200) {
+      const { name, image } = res.data;
+      setUser((prev) => ({ ...prev, name: name, image: image }));
+      if (name) {
+        setUserName((prev) => name);
       }
-      let imgResp = await getImage();
-      // let b64Response = btoa(imgResp);
-      if (imgResp.status === 200) {
-        let imgData = imgResp.data;
-
-        setImageUrl((prev) => "data:image/png;base64," + imgData);
-        setImageLoading((prev) => false);
-        console.log(imgResp);
-      }
-    } else {
-      setImageLoading((prev) => true);
-      setTimeout(async () => {
-        let response = await fetchImage();
-        let imgResp = await getImage();
-      }, 15000);
-      setTimeout(async () => {
-        let imgResp = await getImage();
-        if (imgResp.status === 200) {
-          let imgData = imgResp.data;
-          setImageUrl((prev) => "data:image/png;base64," + imgData);
-          console.log(imgResp);
-          setImageLoading((prev) => false);
-        }
-      }, 20000);
     }
-    // b64Response = Buffer.from(b64Response, "base64").toString("ascii");
-    setLoading(false);
+    setImageLoading(false);
   };
 
   useEffect(() => {
@@ -118,7 +90,7 @@ const ProfileSetup = () => {
         <img
           // src={user?.image ? user.image : blankImage}
           // className="bg-UserImage"
-          src={imageUrl ? imageUrl : blankImage}
+          src={user.image ? "data:image/webp;base64," + user.image : blankImage}
           className="bg-UserImage"
           style={{ opacity: imageLoading ? 0.25 : 1 }}
         />
