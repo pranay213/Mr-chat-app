@@ -1,12 +1,11 @@
 import axios from "axios";
 import { ErrorToast, SuccessToast } from "../components/Toast";
 import { getToken } from "../Storage";
-
 const lstoken = await getToken();
 
 // const baseUrl = "https://chat-api.cyclic.app/api/";
-const baseUrl = "http://localhost:5000/api";
-// const baseUrl = "https://chat-api-app.up.railway.app/api";
+// const baseUrl = "http://localhost:5000/api";
+const baseUrl = "https://chat-api-app.up.railway.app/api";
 
 export const ApiCall = axios.create({
   baseURL: baseUrl,

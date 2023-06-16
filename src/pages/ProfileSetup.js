@@ -11,6 +11,7 @@ import btoa from "btoa";
 import { ClimbingBoxLoader, ClipLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 import { MainContext } from "../Context";
+import Compressor from "compressorjs";
 const ProfileSetup = () => {
   const { setUserName } = useContext(MainContext);
   const [user, setUser] = useState({ name: "", image: "" });
@@ -18,8 +19,11 @@ const ProfileSetup = () => {
   const [fetch, setFetch] = useState(0);
   const [imageUrl, setImageUrl] = useState("");
   const [imageLoading, setImageLoading] = useState(false);
+  const [compressedImagefile, setCompressedImagefile] = useState();
+  const [uploadesTimes, setUploadedTimes] = useState(0);
   const inputElement = useRef();
   let navigate = useNavigate();
+  var formData = new FormData();
 
   const onChange = (e) => {
     e.preventDefault();
@@ -45,17 +49,20 @@ const ProfileSetup = () => {
   };
 
   const ImageUpload = async (event) => {
+    setImageLoading(true);
     event.preventDefault();
     const file = event.target.files[0];
-    var formData = new FormData();
-    if ((file?.type).includes("image")) {
-      formData.append("image", file);
-      setImageLoading(true);
-      let res = await uploadImage(formData);
-      if (res.status === 200) {
-        setFetch((prev) => prev + 1);
-      }
-      console.log({ formData });
+    console.log("file---", file);
+    if (file?.type.includes("image")) {
+      console.log(uploadesTimes);
+      let new_File = new Compressor(file, {
+        quality: 0.1, // 0.6 can also be used, but its not recommended to go below.
+        success: async (compressedResult) => {
+          // compressedResult has the compressed file.
+          // Use the compressed file to upload the images to your server.
+          setCompressedImagefile((prev) => compressedResult);
+        },
+      });
     } else {
       ErrorToast("Please Upload Image Only");
     }
@@ -79,6 +86,25 @@ const ProfileSetup = () => {
   useEffect(() => {
     ImageFetch();
   }, [fetch]);
+
+  useEffect(() => {
+    console.log("compressedfile", compressedImagefile);
+    if (compressedImagefile) {
+      Image_upload();
+    }
+  }, [compressedImagefile]);
+
+  const Image_upload = async () => {
+    setImageLoading(true);
+    formData.append("image", compressedImagefile);
+    setImageLoading(true);
+    let res = await uploadImage(formData);
+    if (res.status === 200) {
+      setFetch((prev) => prev + 1);
+    }
+    console.log({ formData });
+    setImageLoading(false);
+  };
   return (
     <div className="bg-container">
       <div className="bg-userImage">
@@ -108,6 +134,9 @@ const ProfileSetup = () => {
               ref={inputElement}
               accept="capture=camera,image/*"
               onChange={ImageUpload}
+              onClick={(event) => {
+                event.target.value = null;
+              }}
             />
           </button>
         </div>
