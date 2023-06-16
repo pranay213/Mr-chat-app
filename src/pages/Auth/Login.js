@@ -1,7 +1,7 @@
 import BackgroundChatImage from "../../components/svgs/BackgroundChatImage";
 import Button from "../../components/Button";
 import "../../css/Login.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Toast, { ErrorToast } from "../../components/Toast";
@@ -12,6 +12,7 @@ const Login = () => {
   const [user, setUser] = useState({ number: "", checked: false });
   const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
+  const inputElement = useRef();
 
   const numberChange = (phone) => {
     console.log({ phone });
@@ -37,6 +38,9 @@ const Login = () => {
     }
     console.log("loginResponse", res);
   };
+  const checkboxFn = () => {
+    inputElement.current.click();
+  };
   return (
     <div className="login-bg-container">
       <h1 className="heading"> --Chat App--</h1>
@@ -58,9 +62,10 @@ const Login = () => {
           type="checkbox"
           className="checkbox-element"
           defaultChecked={user.checked}
+          ref={inputElement}
           onChange={checkedChange}
         />
-        <p>Accept Terms & Conditions</p>
+        <p onClick={checkboxFn}>Accept Terms & Conditions</p>
       </div>
       <Button
         buttonText={"Login"}

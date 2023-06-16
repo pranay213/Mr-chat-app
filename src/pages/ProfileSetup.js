@@ -134,7 +134,7 @@ const ProfileSetup = () => {
               id="bg-camera-id"
               hidden
               ref={inputElement}
-              accept="image/*"
+              accept="capture=camera,image/*"
               onChange={ImageUpload}
             />
           </button>
